@@ -27,37 +27,27 @@ The Ralph Wiggum approach is an iterative AI coding methodology where Claude wor
 
 ## Installation
 
-Clone this repository to a location of your choice:
-
 ```bash
-git clone https://github.com/relferreira/linear-ralph.git
-cd linear-ralph
-chmod +x linear-ralph.sh
+curl -fsSL https://raw.githubusercontent.com/relferreira/linear-ralph/main/install.sh | bash
 ```
 
 ## Usage
 
-Run the script **from within your project directory** so Claude has the correct context. The script path should point to wherever you cloned this repo:
+Run from **within your project directory** so Claude has the correct context:
 
 ```bash
 cd /path/to/your/project
-sh /path/to/linear-ralph/linear-ralph.sh <linear-ticket-id> [iterations]
+linear-ralph <linear-ticket-id> [iterations]
 ```
 
 ### Example
 
-If you cloned to `~/linear-ralph` and your project is at `~/mycompany/my-app`:
-
 ```bash
 cd ~/mycompany/my-app
-sh ~/linear-ralph/linear-ralph.sh PROJ-123
-```
+linear-ralph PROJ-123
 
-Or with a custom iteration limit:
-
-```bash
-cd ~/mycompany/my-app
-sh ~/linear-ralph/linear-ralph.sh PROJ-123 5
+# With a custom iteration limit
+linear-ralph PROJ-123 5
 ```
 
 ## Progress Tracking

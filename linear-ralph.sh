@@ -28,7 +28,9 @@ for ((i=1; i<=$ITERATIONS; i++)); do
        - Use: git worktree add <path> -b <branch> (creates worktree and branch together)
        - Then cd into the worktree to do all work there
        - Copy .env.local from the original repo if it exists and isn't already in the worktree
-    4. Read $PROGRESS_FILE to see what has been done (create it if it doesn't exist)
+    4. Check if $PROGRESS_FILE exists in the worktree:
+       - If not, create it with: echo '=== Progress for $TICKET_ID ===' > $PROGRESS_FILE
+       - Read the file to see what issues have already been completed
     5. Select which issue to work on:
        - If sub-issues exist: use list_issues(parentId=..., orderBy='createdAt') to get them ordered oldest to newest, then work through them in that order, skipping any marked as 'Done' or 'Completed'
        - If no sub-issues: work on the parent ticket directly
@@ -37,7 +39,7 @@ for ((i=1; i<=$ITERATIONS; i++)); do
     8. Run tests and type checks, then build the project
     9. Commit changes with message referencing the issue's ticket ID
     10. Update the issue status to 'Done' or 'Completed' using Linear MCP update_issue
-    11. Append what you accomplished to $PROGRESS_FILE
+    11. Append to $PROGRESS_FILE: echo '<issue-id>: <summary of what was done>' >> $PROGRESS_FILE
 
     ONLY WORK ON A SINGLE ISSUE.
 

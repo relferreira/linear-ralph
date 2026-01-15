@@ -32,7 +32,11 @@ for ((i=1; i<=$ITERATIONS; i++)); do
 
     1. Read ticket $TICKET_ID using Linear MCP (if not already done)
     2. Check if this ticket has sub-issues using list_issues(parentId=...) (if not already done)
-    3. Checkout the ticket's branch (if not already done, create using pattern: <developer-name>/<ticket-id>-<brief-description>)
+    3. Create a git worktree for this ticket (if not already done):
+       - Path: ../\$(basename \$(pwd))-linear-$TICKET_ID
+       - Branch: <developer-name>/$TICKET_ID-<brief-description>
+       - Use: git worktree add <path> -b <branch> (creates worktree and branch together)
+       - Then cd into the worktree to do all work there
     4. Select which issue to work on:
        - If sub-issues exist: use list_issues(parentId=..., orderBy='createdAt') to get them ordered oldest to newest, then work through them in that order, skipping any marked as 'Done' or 'Completed'
        - If no sub-issues: work on the parent ticket directly
@@ -44,7 +48,10 @@ for ((i=1; i<=$ITERATIONS; i++)); do
 
     ONLY WORK ON A SINGLE ISSUE.
 
-    If all issues are complete (parent + all sub-issues marked as Done), output <promise>COMPLETE</promise>")
+    If all issues are complete (parent + all sub-issues marked as Done):
+    1. cd back to the original repo
+    2. Remove the worktree with: git worktree remove <worktree-path>
+    3. Output <promise>COMPLETE</promise>")
 
   echo "$result"
   echo ""

@@ -27,6 +27,7 @@ for ((i=1; i<=$ITERATIONS; i++)); do
        - Branch: <developer-name>/$TICKET_ID-<brief-description>
        - Use: git worktree add <path> -b <branch> (creates worktree and branch together)
        - Then cd into the worktree to do all work there
+       - Copy .env.local from the original repo if it exists and isn't already in the worktree
     4. Read $PROGRESS_FILE to see what has been done (create it if it doesn't exist)
     5. Select which issue to work on:
        - If sub-issues exist: use list_issues(parentId=..., orderBy='createdAt') to get them ordered oldest to newest, then work through them in that order, skipping any marked as 'Done' or 'Completed'

@@ -2,7 +2,7 @@
 
 > **⚠️ Experimental:** This project is a proof of concept and may not work perfectly in all scenarios.
 
-A bash script that uses Claude CLI with the "Ralph Wiggum" approach to autonomously work through Linear tickets and their sub-issues.
+A bash script that uses Claude Code with the "Ralph Wiggum" approach to autonomously work through Linear tickets and their sub-issues.
 
 Inspired by [Getting Started with Ralph](https://www.aihero.dev/getting-started-with-ralph).
 
@@ -70,7 +70,14 @@ linear-ralph PROJ-123 5
 
 ## Progress Tracking
 
-The script creates a progress file (`<ticket-id>-progress.txt`) to track what has been accomplished across iterations. This allows Claude to resume work and avoid repeating completed tasks.
+The script creates a progress file (`<ticket-id>-progress.txt`) in your project directory to track what has been accomplished across iterations. This allows Claude to resume work and avoid repeating completed tasks.
+
+**Note:** Consider adding `*-progress.txt` to your `.gitignore` to avoid committing these files.
+
+## Important Notes
+
+- The script uses `--dangerously-skip-permissions` flag to allow Claude to run autonomously without prompting for each action
+- Make sure you trust the Linear ticket content before running, as Claude will execute the tasks described
 
 ## License
 

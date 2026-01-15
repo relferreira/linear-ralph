@@ -31,11 +31,12 @@ for ((i=1; i<=$ITERATIONS; i++)); do
     5. Select which issue to work on:
        - If sub-issues exist: use list_issues(parentId=..., orderBy='createdAt') to get them ordered oldest to newest, then work through them in that order, skipping any marked as 'Done' or 'Completed'
        - If no sub-issues: work on the parent ticket directly
-    6. Implement the selected issue completely following project conventions
-    7. Run tests and type checks, then build the project
-    8. Commit changes with message referencing the issue's ticket ID
-    9. Update the issue status to 'Done' or 'Completed' using Linear MCP update_issue
-    10. Append what you accomplished to $PROGRESS_FILE
+    6. Mark the selected issue as 'In Progress' using Linear MCP update_issue
+    7. Implement the selected issue completely following project conventions
+    8. Run tests and type checks, then build the project
+    9. Commit changes with message referencing the issue's ticket ID
+    10. Update the issue status to 'Done' or 'Completed' using Linear MCP update_issue
+    11. Append what you accomplished to $PROGRESS_FILE
 
     ONLY WORK ON A SINGLE ISSUE.
 

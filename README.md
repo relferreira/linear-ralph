@@ -21,7 +21,18 @@ The Ralph Wiggum approach is an iterative AI coding methodology where Claude wor
 
 ## Recommended Workflow
 
-For best results, structure your Linear tickets as follows:
+For best results, follow this iterative loop:
+
+```mermaid
+flowchart TD
+    A[Create parent issue as spec] --> B[Break into sub-issues]
+    B --> C[Run linear-ralph]
+    C --> D[Review the work]
+    D --> E{Satisfied?}
+    E -->|No| F[Add new sub-issues]
+    F --> C
+    E -->|Yes| G[Done!]
+```
 
 1. **Create a parent issue as a spec document** - Write a detailed description of the feature or task, including context, requirements, and acceptance criteria
 
@@ -31,6 +42,14 @@ For best results, structure your Linear tickets as follows:
    - "Write unit tests for UserProfile component"
 
 3. **Run linear-ralph with the parent issue ID** - The script will work through each sub-issue in order, marking them as done
+
+4. **Review the work** - Check what Claude implemented, test it, and identify what needs improvement or is missing
+
+5. **Add new sub-issues** - Based on your review, create new sub-issues for fixes, improvements, or additional features
+
+6. **Run linear-ralph again** - The script will pick up the new sub-issues and continue where it left off
+
+7. **Repeat until satisfied** - Keep iterating until the feature is complete
 
 **Tips:**
 - Keep sub-issues small and specific

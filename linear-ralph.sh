@@ -37,7 +37,7 @@ for ((i=1; i<=$ITERATIONS; i++)); do
     6. Mark the selected issue as 'In Progress' using Linear MCP update_issue
     7. Implement the selected issue completely following project conventions
     8. Run tests and type checks, then build the project
-    9. Commit changes with message referencing the issue's ticket ID
+    9. Commit changes with message referencing the issue's ticket ID (do not commit $PROGRESS_FILE)
     10. Update the issue status to 'Done' or 'Completed' using Linear MCP update_issue
     11. Append to $PROGRESS_FILE: echo '<issue-id>: <summary of what was done>' >> $PROGRESS_FILE
 

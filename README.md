@@ -39,8 +39,8 @@ For best results, structure your Linear tickets as follows:
 
 ## Prerequisites
 
-- [Claude CLI](https://docs.anthropic.com/en/docs/claude-code) installed and configured
-- Linear MCP configured in Claude CLI
+- [Claude Code](https://claude.com/product/claude-code) installed and configured
+- [Linear MCP](https://linear.app/docs/mcp#claude) configured in Claude Code
 - Git configured for your project
 
 ## Installation

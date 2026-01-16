@@ -39,7 +39,7 @@ for ((i=1; i<=$ITERATIONS; i++)); do
     8. Run tests and type checks, then build the project
     9. Commit changes with message referencing the issue's ticket ID (do not commit $PROGRESS_FILE)
     10. Update the issue status to 'Done' or 'Completed' using Linear MCP update_issue
-    11. Append to $PROGRESS_FILE: echo '<issue-id>: <summary of what was done>' >> $PROGRESS_FILE
+    11. Append a detailed description to $PROGRESS_FILE including: issue ID, what was implemented, files changed, and any important decisions made
 
     ONLY WORK ON A SINGLE ISSUE.
 

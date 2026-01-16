@@ -46,7 +46,8 @@ for ((i=1; i<=$ITERATIONS; i++)); do
     If all issues are complete (parent + all sub-issues marked as Done):
     1. cd back to the original repo
     2. Remove the worktree with: git worktree remove <worktree-path>
-    3. Output <promise>COMPLETE</promise>")
+    3. Output <promise>COMPLETE</promise>
+    4. Output the branch name that was used: <branch>branch-name</branch>")
 
   echo "$result"
   echo ""

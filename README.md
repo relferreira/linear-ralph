@@ -62,6 +62,16 @@ flowchart TD
 - [Linear MCP](https://linear.app/docs/mcp#claude) configured in Claude Code
 - Git configured for your project
 
+### Installing Linear MCP
+
+The script requires Linear MCP to be configured at the **user level** (not project level) so it's available in git worktrees:
+
+```bash
+claude mcp add --transport http --scope user linear-server https://mcp.linear.app/mcp
+```
+
+This will prompt you to authenticate with Linear. Once configured, the Linear MCP will be available across all your projects.
+
 ## Installation
 
 ```bash
